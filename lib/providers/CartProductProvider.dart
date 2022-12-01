@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:shopp/models/CartProductModel.dart';
 import 'package:shopp/models/ProductModel.dart';
+import 'package:shopp/providers/ProductListProvider.dart';
 
 class CartProductProvider with ChangeNotifier {
   Map<String, CartProductModel> _cardProductModel = {};
@@ -49,6 +50,27 @@ class CartProductProvider with ChangeNotifier {
 
   void removeItemOfList(String id) {
     _cardProductModel.remove(id);
+    notifyListeners();
+  }
+
+  void removeOneItemList(ProductModel product) {
+    if (!_cardProductModel.containsKey(product.id)) {
+      return;
+    }
+
+    if (_cardProductModel[product.id]?.quantity == 1) {
+      removeItemOfList(product.id);
+    } else {
+      _cardProductModel.update(
+        product.id,
+        (it) => CartProductModel(
+            name: it.name,
+            price: it.price,
+            id: it.id,
+            quantity: it.quantity - 1,
+            productId: it.productId),
+      );
+    }
     notifyListeners();
   }
 

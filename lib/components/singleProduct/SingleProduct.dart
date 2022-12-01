@@ -18,6 +18,23 @@ class SingleShop extends StatelessWidget {
           .pushNamed(ConstantRoutes.productDetail, arguments: product);
     }
 
+    void handleActionSackBar(ProductModel product) {
+      cart.removeOneItemList(product);
+    }
+
+    void handleAddProduct(ProductModel product) {
+      cart.addItemOfList(product);
+      //consigo acessar pelo contexto o Scaffold do mais proximo
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: const Text("Item adicionado com suceso"),
+        duration: const Duration(seconds: 2),
+        action: SnackBarAction(
+          onPressed: () => handleActionSackBar(product),
+          label: "Desfazer",
+        ),
+      ));
+    }
+
     return GridTile(
       footer: GridTileBar(
         backgroundColor: Colors.black87,
@@ -37,7 +54,7 @@ class SingleShop extends StatelessWidget {
           ),
         ),
         trailing: IconButton(
-          onPressed: () => cart.addItemOfList(product),
+          onPressed: () => handleAddProduct(product),
           icon: Icon(Icons.shopping_cart,
               color: Theme.of(context).colorScheme.secondary),
         ),
