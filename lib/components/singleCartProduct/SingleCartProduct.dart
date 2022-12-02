@@ -17,6 +17,27 @@ class SingleCartProduct extends StatelessWidget {
       cartProvider.removeItemOfList(cartModel.productId);
     }
 
+    void handlePop(bool status) {
+      Navigator.of(context).pop(status);
+    }
+
+    Future<bool?> handleConfirmDelete() {
+      return showDialog(
+          context: context,
+          builder: (_) => AlertDialog(
+                title: const Text("Tem certeza que deseja excluir?"),
+                content: const Text("Apos excluir não sera possivel reverter"),
+                actions: [
+                  TextButton(
+                      onPressed: () => handlePop(true),
+                      child: const Text("Sim")),
+                  TextButton(
+                      onPressed: () => handlePop(false),
+                      child: const Text("Não"))
+                ],
+              ));
+    }
+
     return Dismissible(
       key: Key(cartModel.id),
       direction: DismissDirection.endToStart,
@@ -32,6 +53,7 @@ class SingleCartProduct extends StatelessWidget {
         ),
       ),
       onDismissed: (_) => handleDeleteCart(),
+      confirmDismiss: (_) => handleConfirmDelete(),
       child: Card(
         elevation: 5,
         margin: const EdgeInsets.all(10),

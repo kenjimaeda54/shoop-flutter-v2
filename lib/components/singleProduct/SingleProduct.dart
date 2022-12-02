@@ -24,6 +24,9 @@ class SingleShop extends StatelessWidget {
 
     void handleAddProduct(ProductModel product) {
       cart.addItemOfList(product);
+      ScaffoldMessenger.of(context)
+          .hideCurrentSnackBar(); //aqui garanto apenas um
+      //snack bar
       //consigo acessar pelo contexto o Scaffold do mais proximo
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: const Text("Item adicionado com suceso"),

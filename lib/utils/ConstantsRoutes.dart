@@ -3,4 +3,6 @@ class ConstantRoutes {
   static const String productDetail = "productDetails";
   static const String cartProduct = "cardProduct";
   static const String oder = "order";
+  static const String manageProduct = "manageProduct";
+  static const String formProduct = "formProduct";
 }

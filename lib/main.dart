@@ -3,7 +3,9 @@ import 'package:shopp/providers/CartProductProvider.dart';
 import 'package:shopp/providers/OrderProvider.dart';
 import 'package:shopp/providers/ProductListProvider.dart';
 import 'package:shopp/screen/cartProduct/CartProduct.dart';
+import 'package:shopp/screen/formProduct/FormProduct.dart';
 import 'package:shopp/screen/home/Home.dart';
+import 'package:shopp/screen/manageProduct/ManageProduct.dart';
 import 'package:shopp/screen/order/Order.dart';
 import 'package:shopp/screen/productDetail/ProductDetail.dart';
 import 'package:shopp/utils/ConstantsRoutes.dart';
@@ -44,6 +46,8 @@ class MyApp extends StatelessWidget {
           ConstantRoutes.productDetail: (_) => const ProductDetails(),
           ConstantRoutes.cartProduct: (_) => const CartProduct(),
           ConstantRoutes.oder: (_) => const Order(),
+          ConstantRoutes.manageProduct: (_) => const ManageProduct(),
+          ConstantRoutes.formProduct: (_) => const FormProduct(),
         },
       ),
     );

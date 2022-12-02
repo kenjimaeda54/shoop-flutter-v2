@@ -27,11 +27,19 @@ class AppDrawer extends StatelessWidget {
               onTap: () => handleNavigation(ConstantRoutes.homeScreen)),
           const Divider(),
           ListTile(
-              leading: const Icon(
-                Icons.credit_card,
-              ),
-              title: const Text("Pedidos"),
-              onTap: () => handleNavigation(ConstantRoutes.oder))
+            leading: const Icon(
+              Icons.credit_card,
+            ),
+            title: const Text("Pedidos"),
+            onTap: () => handleNavigation(ConstantRoutes.oder),
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.credit_card,
+            ),
+            title: const Text("Gerenciar Pedidos"),
+            onTap: () => handleNavigation(ConstantRoutes.manageProduct),
+          ),
         ],
       ),
     );

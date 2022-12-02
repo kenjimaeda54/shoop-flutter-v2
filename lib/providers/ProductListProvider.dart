@@ -20,6 +20,10 @@ class ProductListProvider with ChangeNotifier {
   //dessa maneria de fato sera a lista verdadeira
   List<ProductModel> getItens() => [..._products];
 
+  int get shouldReturnTotalOfProducts {
+    return _products.length;
+  }
+
   List<ProductModel> getItensFilter() =>
       mockShop.where((it) => it.isFavorite).toList();
 
