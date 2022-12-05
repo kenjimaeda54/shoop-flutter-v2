@@ -33,4 +33,28 @@ class ProductListProvider with ChangeNotifier {
     //toda vez que algo ocorrer neste arquivo preciso notificar
     notifyListeners();
   }
+
+  bool hasProduct(Map<String, Object> productModel) {
+    return _products
+            .indexWhere((element) => element.id == productModel["id"]) >=
+        0;
+  }
+
+  void updateProduct(ProductModel productModel) {
+    //se não achar retornara -1
+    final hasIndex = _products.indexWhere((it) => it.id == productModel.id);
+    if (hasIndex >= 0) {
+      _products[hasIndex] = productModel;
+    }
+    notifyListeners();
+  }
+
+  void removeProduct(ProductModel productModel) {
+    //se não achar retornara -1
+    final hasIndex = _products.indexWhere((it) => it.id == productModel.id);
+    if (hasIndex >= 0) {
+      _products.removeWhere((it) => it.id == productModel.id);
+    }
+    notifyListeners();
+  }
 }
