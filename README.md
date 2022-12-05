@@ -167,7 +167,8 @@ trailing: SizedBox(
 ```
 ##
 - Cuidado ao tentar desembrulhar as strings do metodo save
-- O ideal e usar termnario se tentar desembrulhar por if ,pode gerar bugs
+- O ideal e usar terrnário atribuindo um novo valor se não existe valor.
+-  Se tentar desembrulhar por if ,pode gerar bugs
 
 
 
