@@ -5,8 +5,8 @@ Agora e possível cadastra novos produtos e editar
 ## Feature
 - Aprendi novos recursos usando Flutter exemplo: como utilizar o backgorundImage dentro do CirCleAvatar
 - Ao utilizar backgorundImage precisamos usar o método NetWorkImage
-- Quando está dentro  trailing é  você sente necessidade de usar   Row ou Column , e obrigatório determinar a largura, se não o Fluttern não ira renderizar da forma correta
-- No exemplo abaixo o trailing esta renderizado dois botoes em linha
+- Quando está dentro  trailing é  você sente necessidade de usar   Row ou Column , e obrigatório determinar a largura, se não o Flutter não ira renderizar da forma correta
+- No exemplo abaixo o trailing esta renderizado dois botões em linha
 
 ```dart
 
@@ -121,7 +121,7 @@ trailing: SizedBox(
 ```
 
 ##
-- Desvantagem de não usar um controller, para criar um valor inicial preciso usar o initialValue
+- Desvantagem de não usar um controller,para mostrar o valor inicial preciso usar o initialValue
 - Repare que abaixo o initialValue esta apontando para um Map 
 -  Caso existam os argumentos enviados plea rota, sera instanciado no através do método [didChangeDependencies]//https://api.flutter.dev/flutter/widgets/State/didChangeDependencies.html) 
 - Este método e acionado a cada mudança do state, então esta disponível apenas em classes StatefulWidget
@@ -168,7 +168,7 @@ trailing: SizedBox(
 ##
 - Cuidado ao tentar desembrulhar as strings do metodo save
 - O ideal e usar terrnário atribuindo um novo valor se não existe valor.
--  Se tentar desembrulhar por if ,pode gerar bugs
+- Se tentar desembrulhar por if ,pode gerar bugs
 
 
 
