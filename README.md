@@ -1,11 +1,11 @@
 # Shoop v2
 Melhoria do [shoopv1](https://github.com/kenjimaeda54/shop-flutter-v1/blob/develop/README.md) </br>
-Agora e possivel cadastar novos produtos e editar
+Agora e possível cadastra novos produtos e editar
 
 ## Feature
-- Aprendi novos recursos usando Flutter como utilizar o backgorundImage dentro do CirCleAvatar
-- Ao utilizar backgorundImage precisamos usar o metodo NetWorkImage
-- Quando esta dentro  trailing e precisa usar   Row ou Column , e obrigatorio determinar a largura, se nao o Fluttern nao ira renderizar da forma correta
+- Aprendi novos recursos usando Flutter exemplo: como utilizar o backgorundImage dentro do CirCleAvatar
+- Ao utilizar backgorundImage precisamos usar o método NetWorkImage
+- Quando está dentro  trailing é  você sente necessidade de usar   Row ou Column , e obrigatório determinar a largura, se não o Fluttern não ira renderizar da forma correta
 - No exemplo abaixo o trailing esta renderizado dois botoes em linha
 
 ```dart
@@ -37,15 +37,15 @@ trailing: SizedBox(
 ```
 
 ##
-- Para lidar com formularios em Dart existe duas posibilidades a primeria e usar Controller e a segunda proprio Form
-- Vantagem de usar Form que temos acesso a todos campos quando submetido
-- Para ser possivel ter os campos e necessario usar   GlobalKey mais a propriedade saved 
-- Tambem utilizando o GlobalKey temos acesso a validadores atraves do meotod validator e validate()
-- Se o validator retonrar null e porque esta tudo ok
+- Para lidar com formulários em Dart existe duas possibilidades, a primeira e usar Controller e a segunda próprio Form
+- Vantagem de usar Form que temos acesso a todos os campos quando submetido
+- Para ser possível ter os campos e necessário usar   GlobalKey mais a propriedade saved 
+- Também utilizando o GlobalKey temos acesso a validadores através do método  validator e validate()
+- Se o validator retonrar null porque esta tudo ok
 
 ```dart
 
- //funcao validaora
+ //função validadora
  
  String? handleValidatorUrl(String? url) {
     final urlString = url ?? "";
@@ -63,7 +63,7 @@ trailing: SizedBox(
 
  
 
- //metodo quando o fomrulairo e submetido
+ //método quando o formulario e submetido
   void handleSubmitForm() {
     final validator = _formKey.currentState?.validate() ?? false;
 
@@ -121,9 +121,10 @@ trailing: SizedBox(
 ```
 
 ##
-- Desvantagem de nao usar um controller e nao consigo instanciar um valor apenas no inicio sem usar o initialValue
-- Repare que abaixo o initialValue esta apontando para um Map que caso exista os argumentos sera instanciado no inicio atraves do metodo [didChangeDependencies]//https://api.flutter.dev/flutter/widgets/State/didChangeDependencies.html) este metodo e acionado a cada mudanca do state,entao esta diponsivel apenas e em StatefulWidget
-
+- Desvantagem de não usar um controller, para criar um valor inicial preciso usar o initialValue
+- Repare que abaixo o initialValue esta apontando para um Map 
+-  Caso existam os argumentos enviados plea rota, sera instanciado no através do método [didChangeDependencies]//https://api.flutter.dev/flutter/widgets/State/didChangeDependencies.html) 
+- Este método e acionado a cada mudança do state, então esta disponível apenas em classes StatefulWidget
 
 ```dart
  @override
