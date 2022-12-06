@@ -188,6 +188,62 @@ trailing: SizedBox(
 
 ```
 
+##
+- Usei recursos de focus e addListener 
+- Focus e para permitir focus nos campos ,assim consigo de um campo navegar para outro com o teclado
+- Addlistener foi para permitir salvar o texto no controller,assim quando usuario sai de um campo apra outro a imagem e mostrada
+- Repara que o listner esta chmando a mesma funcao e nela apenas possui um setState so isso ja e o suficiente para adicionar o texto ao no nosso controller
+- Para criar o focus chamamos o metodo request focus
+
+```dart
+  final _priceFoucs = FocusNode();
+  final _descriptionFocus = FocusNode();
+  final _urlFocus = FocusNode();
+ final _urlController =
+  TextEditingController();
+  
+  @override
+  void initState() {
+    super.initState();
+    _urlController.addListener(handleListenerUrl);
+ 
+  }
+
+
+  @override
+  void dispose() {
+    super.dispose();
+    _descriptionFocus.dispose();
+    _priceFoucs.dispose();
+    _urlFocus.dispose();
+    _urlController.removeListener(handleListenerUrl);
+  }
+  
+  void handleListenerUrl() {
+    setState(() {});
+  }
+
+
+ void handleFocus(FocusNode node) {
+      Focus.of(context).requestFocus(node);
+    }
+
+
+TextFormField(
+                initialValue: _formData["description"]?.toString(),
+                decoration: const InputDecoration(label: Text("Descrição")),
+                focusNode: _descriptionFocus,
+                keyboardType: TextInputType.multiline,
+                onSaved: (description) =>
+                    handleSave(text: description, field: "description"),
+                validator: (description) =>
+                    handleValitorFieldString(text: description, quantity: 10),
+                maxLines: 3,
+              ),
+
+```
+
+
 
 
 
