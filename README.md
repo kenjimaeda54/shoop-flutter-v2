@@ -190,10 +190,10 @@ trailing: SizedBox(
 
 ##
 - Usei recursos de focus e addListener 
-- Focus e para permitir focus nos campos ,assim consigo de um campo navegar para outro com o teclado
-- Addlistener foi para permitir salvar o texto no controller,assim quando usuario sai de um campo apra outro a imagem e mostrada
-- Repara que o listner esta chmando a mesma funcao e nela apenas possui um setState so isso ja e o suficiente para adicionar o texto ao no nosso controller
-- Para criar o focus chamamos o metodo request focus
+- Com focus consigo  navegar de um campo  para outro apenas  com o teclado
+- Addlistener foi para permitir salvar o texto no controller, assim quando usuário sai do text filed url para outro a imagem e mostrada
+- Repara que o listner esta chamando a mesma função e nela possui apenas um setState , só isso  e o suficiente para adicionar o texto ao no nosso controller
+- Para criar o focus chamamos o método request focus
 
 ```dart
   final _priceFoucs = FocusNode();
